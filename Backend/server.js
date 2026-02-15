@@ -1,7 +1,7 @@
  require("dotenv").config();
 
 console.log("MONGO URI:", process.env.MONGO_URI);
- 
+ // Simple Express server to handle job matching and chatbot responses
  
 const express = require("express");
 const cors = require("cors");
