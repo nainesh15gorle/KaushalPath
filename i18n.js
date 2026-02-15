@@ -1,7 +1,7 @@
 /**
  * KaushalPath - Internationalization (i18n) Module
  * Supports: English (en), Hindi (hi), Tamil (ta), Telugu (te), Marathi (mr)
- * Uses Google Translate API naming conventions
+ * Uses Google Translater  API naming conventions
  */
 
 const I18n = (function() {
