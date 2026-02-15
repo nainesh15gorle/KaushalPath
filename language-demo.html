@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Demo - KaushalPath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #0d1117;
+      --color-surface: #161b27;
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-accent: #4f7ef7;
+      --color-text-primary: #ffffff;
+      --color-text-secondary: rgba(255, 255, 255, 0.7);
+      --font-family: 'Plus Jakarta Sans', 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      min-height: 100vh;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #4f7ef7 0%, #9f7aea 50%, #f687b3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .language-controls {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: 2px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-primary);
+      border-radius: 12px;
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(79, 126, 247, 0.3);
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      box-shadow: 0 0 20px rgba(79, 126, 247, 0.5);
+    }
+
+    .demo-sections {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .demo-section {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .demo-section h2 {
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .demo-item {
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+    }
+
+    .demo-item strong {
+      display: block;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-item span {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .current-lang-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--color-surface);
+      border: 2px solid var(--color-accent);
+      border-radius: 24px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .lang-icon {
+      font-size: 1.5rem;
+    }
+
+    .info-box {
+      background: rgba(79, 126, 247, 0.1);
+      border: 1px solid var(--color-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .info-box h3 {
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-box li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .info-box li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .demo-section {
+      animation: fadeIn 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌍 Language System Demo</h1>
+      <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">
+        KaushalPath Multilingual Support
+      </p>
+      <div class="current-lang-display">
+        <span class="lang-icon">🌐</span>
+        <span id="currentLangName">English</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>📋 System Information</h3>
+      <ul>
+        <li><strong>Total Languages:</strong> 5 (English, Hindi, Marathi, Tamil, Telugu)</li>
+        <li><strong>Total Translation Keys:</strong> 100+</li>
+        <li><strong>Storage:</strong> localStorage (key: 'kaushalpath_language')</li>
+        <li><strong>Font Stack:</strong> Plus Jakarta Sans → Noto Sans → System Fonts</li>
+        <li><strong>Update Method:</strong> Real-time DOM updates via data-i18n</li>
+      </ul>
+    </div>
+
+    <div class="language-controls">
+      <button class="btn btn-primary" onclick="cycleLanguage()">
+        🔄 Cycle Language (EN → MR → TE → TA)
+      </button>
+      <button class="btn" onclick="changeLanguage('en')" data-lang="en">English 🇬🇧</button>
+      <button class="btn" onclick="changeLanguage('hi')" data-lang="hi">हिन्दी 🇮🇳</button>
+      <button class="btn" onclick="changeLanguage('mr')" data-lang="mr">मराठी 🇮🇳</button>
+      <button class="btn" onclick="changeLanguage('ta')" data-lang="ta">தமிழ் 🇮🇳</button>
+      <button class="btn" onclick="changeLanguage('te')" data-lang="te">తెలుగు 🇮🇳</button>
+    </div>
+
+    <div class="demo-sections">
+      <!-- Hero Section -->
+      <div class="demo-section">
+        <h2>🎯 Hero Section</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Badge</strong>
+            <span data-i18n="hero.badge">AI-Powered Career Matching</span>
+          </div>
+          <div class="demo-item">
+            <strong>Title Pre</strong>
+            <span data-i18n="hero.titlePre">Find Your</span>
+          </div>
+          <div class="demo-item">
+            <strong>Title Highlight</strong>
+            <span data-i18n="hero.titleHighlight">Dream Job</span>
+          </div>
+          <div class="demo-item" style="grid-column: 1 / -1;">
+            <strong>Subtitle</strong>
+            <span data-i18n="hero.subtitle">Answer a few quick questions and let our AI engine match you with perfect opportunities.</span>
+          </div>
+          <div class="demo-item">
+            <strong>Get Started Button</strong>
+            <span data-i18n="hero.getStarted">Get Started</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Fields -->
+      <div class="demo-section">
+        <h2>📝 Form Fields</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Full Name</strong>
+            <span data-i18n="form.fullName">Full Name</span>
+          </div>
+          <div class="demo-item">
+            <strong>Age</strong>
+            <span data-i18n="form.age">Age</span>
+          </div>
+          <div class="demo-item">
+            <strong>Expected Salary</strong>
+            <span data-i18n="form.expectedSalary">Expected Salary</span>
+          </div>
+          <div class="demo-item">
+            <strong>Location</strong>
+            <span data-i18n="form.location">Current Location</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="demo-section">
+        <h2>🧭 Navigation</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Home</strong>
+            <span data-i18n="nav.home">Home</span>
+          </div>
+          <div class="demo-item">
+            <strong>Jobs</strong>
+            <span data-i18n="nav.jobs">Jobs</span>
+          </div>
+          <div class="demo-item">
+            <strong>Insights</strong>
+            <span data-i18n="nav.insights">Insights</span>
+          </div>
+          <div class="demo-item">
+            <strong>Sign In</strong>
+            <span data-i18n="nav.signIn">Sign In</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Steps -->
+      <div class="demo-section">
+        <h2>❓ Quiz Questions</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Step 1 Label</strong>
+            <span data-i18n="quiz.step1.stepLabel">Step 1 of 3</span>
+          </div>
+          <div class="demo-item">
+            <strong>Step 1 Title</strong>
+            <span data-i18n="quiz.step1.title">What's your</span>
+          </div>
+          <div class="demo-item">
+            <strong>Step 1 Highlight</strong>
+            <span data-i18n="quiz.step1.titleHighlight">experience level</span>
+          </div>
+          <div class="demo-item">
+            <strong>Step 2 Label</strong>
+            <span data-i18n="quiz.step2.stepLabel">Step 2 of 3</span>
+          </div>
+          <div class="demo-item" style="grid-column: 1 / -1;">
+            <strong>Step 2 Title</strong>
+            <span data-i18n="quiz.step2.title">What kind of work excites you?</span>
+          </div>
+          <div class="demo-item" style="grid-column: 1 / -1;">
+            <strong>Step 2 Subtitle</strong>
+            <span data-i18n="quiz.step2.subtitle">Pick the area that resonates most</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Levels -->
+      <div class="demo-section">
+        <h2>📊 Experience Levels</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Beginner</strong>
+            <span data-i18n="experience.beginner.title">Just Starting</span>
+          </div>
+          <div class="demo-item">
+            <strong>Mid-Level</strong>
+            <span data-i18n="experience.mid.title">Some Experience</span>
+          </div>
+          <div class="demo-item">
+            <strong>Professional</strong>
+            <span data-i18n="experience.pro.title">Experienced</span>
+          </div>
+          <div class="demo-item">
+            <strong>Master</strong>
+            <span data-i18n="experience.master.title">Master</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Categories -->
+      <div class="demo-section">
+        <h2>💼 Job Categories</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Electrical</strong>
+            <span data-i18n="interests.electrical.title">Electrical</span>
+          </div>
+          <div class="demo-item">
+            <strong>Plumbing</strong>
+            <span data-i18n="interests.plumbing.title">Plumbing</span>
+          </div>
+          <div class="demo-item">
+            <strong>HVAC</strong>
+            <span data-i18n="interests.hvac.title">HVAC</span>
+          </div>
+          <div class="demo-item">
+            <strong>Welding</strong>
+            <span data-i18n="interests.welding.title">Welding & Metal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="demo-section">
+        <h2>🔘 Buttons</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Continue</strong>
+            <span data-i18n="buttons.continue">Continue</span>
+          </div>
+          <div class="demo-item">
+            <strong>Back</strong>
+            <span data-i18n="buttons.back">Back</span>
+          </div>
+          <div class="demo-item">
+            <strong>Next</strong>
+            <span data-i18n="buttons.next">Next</span>
+          </div>
+          <div class="demo-item">
+            <strong>Apply</strong>
+            <span data-i18n="buttons.apply">Apply</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="demo-section">
+        <h2>📈 Statistics</h2>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <strong>Jobs Listed</strong>
+            <span data-i18n="stats.jobsListed">Jobs Listed</span>
+          </div>
+          <div class="demo-item">
+            <strong>Match Rate</strong>
+            <span data-i18n="stats.matchRate">Match Rate</span>
+          </div>
+          <div class="demo-item">
+            <strong>Avg Response</strong>
+            <span data-i18n="stats.avgResponse">Avg. Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 3rem;">
+      <h3>🎨 Font Configuration</h3>
+      <p style="margin-bottom: 1rem;">The site uses a smart font fallback system:</p>
+      <code style="display: block; background: var(--color-bg); padding: 1rem; border-radius: 8px; font-size: 0.875rem; overflow-x: auto;">
+        font-family: 'Plus Jakarta Sans', 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', -apple-system, BlinkMacSystemFont, sans-serif;
+      </code>
+      <ul style="margin-top: 1rem;">
+        <li><strong>English:</strong> Plus Jakarta Sans (Modern)</li>
+        <li><strong>Hindi/Marathi:</strong> Noto Sans Devanagari (Script Support)</li>
+        <li><strong>Tamil:</strong> Noto Sans Tamil (Script Support)</li>
+        <li><strong>Telugu:</strong> Noto Sans Telugu (Script Support)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Update language button states
+    function updateButtonStates() {
+      const currentLang = I18n.getCurrentLanguage();
+      document.querySelectorAll('.language-controls .btn[data-lang]').forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update current language display
+      const langNames = {
+        en: 'English 🇬🇧',
+        hi: 'हिन्दी 🇮🇳',
+        mr: 'मराठी 🇮🇳',
+        ta: 'தமிழ் 🇮🇳',
+        te: 'తెలుగు 🇮🇳'
+      };
+      document.getElementById('currentLangName').textContent = langNames[currentLang] || 'English';
+    }
+
+    // Listen for language changes
+    window.addEventListener('languagechange', () => {
+      updateButtonStates();
+      console.log('✓ Language changed successfully!');
+    });
+
+    // Initial button state
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        updateButtonStates();
+      }, 500);
+    });
+  </script>
+</body>
+</html>

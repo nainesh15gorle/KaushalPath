@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "code": "hi",
+    "name": "Hindi",
+    "nativeName": "हिन्दी",
+    "direction": "ltr"
+  },
+  "nav": {
+    "home": "होम",
+    "jobs": "नौकरियां",
+    "insights": "जानकारी",
+    "signIn": "साइन इन"
+  },
+  "hero": {
+    "badge": "AI-संचालित करियर मैचिंग",
+    "titlePre": "अपनी",
+    "titleHighlight": "सपनों की नौकरी",
+    "subtitle": "कुछ सवालों के जवाब दें और हमारा AI इंजन आपको सर्वोत्तम अवसरों से जोड़ेगा।",
+    "getStarted": "शुरू करें"
+  },
+  "form": {
+    "fullName": "पूरा नाम",
+    "namePlaceholder": "राहुल शर्मा",
+    "age": "उम्र",
+    "agePlaceholder": "25",
+    "expectedSalary": "अपेक्षित वेतन",
+    "salaryPlaceholder": "₹50,000",
+    "location": "वर्तमान स्थान",
+    "locationPlaceholder": "अपना शहर दर्ज करें"
+  },
+  "stats": {
+    "jobsListed": "नौकरियां सूचीबद्ध",
+    "matchRate": "मैच दर",
+    "avgResponse": "औसत प्रतिक्रिया"
+  },
+  "quiz": {
+    "step1": {
+      "stepLabel": "चरण 1 का 3",
+      "title": "आपका",
+      "titleHighlight": "अनुभव स्तर",
+      "titleEnd": "क्या है?"
+    },
+    "step2": {
+      "stepLabel": "चरण 2 का 3",
+      "title": "आपको किस प्रकार का काम पसंद है?",
+      "subtitle": "वह क्षेत्र चुनें जो आपको सबसे अधिक आकर्षित करता है"
+    },
+    "results": {
+      "stepLabel": "पूर्ण!",
+      "title": "AI की सिफारिशें",
+      "subtitle": "आपकी प्रोफ़ाइल के आधार पर, यहाँ आपके शीर्ष मैच हैं"
+    }
+  },
+  "experience": {
+    "beginner": {
+      "title": "शुरुआत",
+      "desc": "क्षेत्र में नए"
+    },
+    "mid": {
+      "title": "कुछ अनुभव",
+      "desc": "1-3 वर्ष"
+    },
+    "pro": {
+      "title": "अनुभवी",
+      "desc": "3-7 वर्ष"
+    },
+    "master": {
+      "title": "विशेषज्ञ",
+      "desc": "7+ वर्ष"
+    }
+  },
+  "interests": {
+    "electrical": {
+      "title": "इलेक्ट्रिकल",
+      "desc": "वायरिंग, सर्किट, पावर सिस्टम"
+    },
+    "plumbing": {
+      "title": "प्लंबिंग",
+      "desc": "पाइप, फिक्सचर, जल प्रणाली"
+    },
+    "hvac": {
+      "title": "HVAC",
+      "desc": "हीटिंग, वेंटिलेशन, कूलिंग"
+    },
+    "welding": {
+      "title": "वेल्डिंग और मेटल",
+      "desc": "फैब्रिकेशन, जोड़ना, काटना"
+    }
+  },
+  "buttons": {
+    "continue": "जारी रखें",
+    "back": "वापस",
+    "next": "आगे",
+    "retake": "फिर से प्रयास करें",
+    "apply": "आवेदन करें"
+  },
+  "alerts": {
+    "selectExperience": "कृपया अपना अनुभव स्तर चुनें",
+    "selectInterest": "कृपया अपनी रुचि का क्षेत्र चुनें"
+  },
+  "jobs": {
+    "matchLabel": "मैच",
+    "salaryPrefix": "₹"
+  },
+  "language": {
+    "label": "भाषा",
+    "selector": "भाषा चुनें"
+  }
+}

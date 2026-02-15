@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "nativeName": "English",
+    "direction": "ltr"
+  },
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "insights": "Insights",
+    "signIn": "Sign In"
+  },
+  "hero": {
+    "badge": "AI-Powered Career Matching",
+    "titlePre": "Find Your",
+    "titleHighlight": "Dream Job",
+    "subtitle": "Answer a few quick questions and let our AI engine match you with perfect opportunities.",
+    "getStarted": "Get Started"
+  },
+  "form": {
+    "fullName": "Full Name",
+    "namePlaceholder": "John Doe",
+    "age": "Age",
+    "agePlaceholder": "25",
+    "expectedSalary": "Expected Salary",
+    "salaryPlaceholder": "₹50,000",
+    "location": "Current Location",
+    "locationPlaceholder": "Enter your city"
+  },
+  "stats": {
+    "jobsListed": "Jobs Listed",
+    "matchRate": "Match Rate",
+    "avgResponse": "Avg. Response"
+  },
+  "quiz": {
+    "step1": {
+      "stepLabel": "Step 1 of 3",
+      "title": "What's your",
+      "titleHighlight": "experience level",
+      "titleEnd": "?"
+    },
+    "step2": {
+      "stepLabel": "Step 2 of 3",
+      "title": "What kind of work excites you?",
+      "subtitle": "Pick the area that resonates most"
+    },
+    "results": {
+      "stepLabel": "Complete!",
+      "title": "AI Recommendations",
+      "subtitle": "Based on your profile, here are your top matches"
+    }
+  },
+  "experience": {
+    "beginner": {
+      "title": "Just Starting",
+      "desc": "New to the field"
+    },
+    "mid": {
+      "title": "Some Experience",
+      "desc": "1-3 years"
+    },
+    "pro": {
+      "title": "Experienced",
+      "desc": "3-7 years"
+    },
+    "master": {
+      "title": "Master",
+      "desc": "7+ years"
+    }
+  },
+  "interests": {
+    "electrical": {
+      "title": "Electrical",
+      "desc": "Wiring, circuits, power systems"
+    },
+    "plumbing": {
+      "title": "Plumbing",
+      "desc": "Pipes, fixtures, water systems"
+    },
+    "hvac": {
+      "title": "HVAC",
+      "desc": "Heating, ventilation, cooling"
+    },
+    "welding": {
+      "title": "Welding & Metal",
+      "desc": "Fabrication, joining, cutting"
+    }
+  },
+  "buttons": {
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "retake": "Retake Quiz",
+    "apply": "Apply"
+  },
+  "alerts": {
+    "selectExperience": "Please select your experience level",
+    "selectInterest": "Please select your area of interest"
+  },
+  "jobs": {
+    "matchLabel": "Match",
+    "salaryPrefix": "₹"
+  },
+  "language": {
+    "label": "Language",
+    "selector": "Select Language"
+  }
+}

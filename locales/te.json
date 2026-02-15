@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "code": "te",
+    "name": "Telugu",
+    "nativeName": "తెలుగు",
+    "direction": "ltr"
+  },
+  "nav": {
+    "home": "హోమ్",
+    "jobs": "ఉద్యోగాలు",
+    "insights": "అంతర్దృష్టి",
+    "signIn": "సైన్ ఇన్"
+  },
+  "hero": {
+    "badge": "AI-ఆధారిత కెరీర్ మ్యాచింగ్",
+    "titlePre": "మీ",
+    "titleHighlight": "డ్రీమ్ జాబ్",
+    "subtitle": "కొన్ని ప్రశ్నలకు సమాధానం ఇవ్వండి, మా AI ఇంజిన్ మీకు సరైన అవకాశాలను అందిస్తుంది.",
+    "getStarted": "ప్రారంభించండి"
+  },
+  "form": {
+    "fullName": "పూర్తి పేరు",
+    "namePlaceholder": "రాజేష్ కుమార్",
+    "age": "వయసు",
+    "agePlaceholder": "25",
+    "expectedSalary": "ఊహించిన జీతం",
+    "salaryPlaceholder": "₹50,000",
+    "location": "ప్రస్తుత స్థానం",
+    "locationPlaceholder": "మీ నగరం నమోదు చేయండి"
+  },
+  "stats": {
+    "jobsListed": "నమోదైన ఉద్యోగాలు",
+    "matchRate": "మ్యాచ్ రేట్",
+    "avgResponse": "సగటు ప్రతిస్పందన"
+  },
+  "quiz": {
+    "step1": {
+      "stepLabel": "దశ 1 / 3",
+      "title": "మీ",
+      "titleHighlight": "అనుభవ స్థాయి",
+      "titleEnd": "ఏమిటి?"
+    },
+    "step2": {
+      "stepLabel": "దశ 2 / 3",
+      "title": "మీకు ఏ రకమైన పని నచ్చుతుంది?",
+      "subtitle": "మీకు బాగా నచ్చిన రంగాన్ని ఎంచుకోండి"
+    },
+    "results": {
+      "stepLabel": "పూర్తయింది!",
+      "title": "AI సిఫార్సులు",
+      "subtitle": "మీ ప్రొఫైల్ ఆధారంగా, ఇక్కడ మీ టాప్ మ్యాచ్‌లు ఉన్నాయి"
+    }
+  },
+  "experience": {
+    "beginner": {
+      "title": "ప్రారంభం",
+      "desc": "రంగంలో కొత్త"
+    },
+    "mid": {
+      "title": "కొంత అనుభవం",
+      "desc": "1-3 సంవత్సరాలు"
+    },
+    "pro": {
+      "title": "అనుభవం ఉన్న",
+      "desc": "3-7 సంవత్సరాలు"
+    },
+    "master": {
+      "title": "నిపుణుడు",
+      "desc": "7+ సంవత్సరాలు"
+    }
+  },
+  "interests": {
+    "electrical": {
+      "title": "ఎలక్ట్రికల్",
+      "desc": "వైరింగ్, సర్క్యూట్లు, పవర్ సిస్టమ్స్"
+    },
+    "plumbing": {
+      "title": "ప్లంబింగ్",
+      "desc": "పైపులు, ఫిక్చర్లు, నీటి వ్యవస్థలు"
+    },
+    "hvac": {
+      "title": "HVAC",
+      "desc": "హీటింగ్, వెంటిలేషన్, కూలింగ్"
+    },
+    "welding": {
+      "title": "వెల్డింగ్ & మెటల్",
+      "desc": "ఫాబ్రికేషన్, జాయినింగ్, కటింగ్"
+    }
+  },
+  "buttons": {
+    "continue": "కొనసాగించు",
+    "back": "వెనుకకు",
+    "next": "తదుపరి",
+    "retake": "మళ్ళీ ప్రయత్నించు",
+    "apply": "దరఖాస్తు చేయండి"
+  },
+  "alerts": {
+    "selectExperience": "దయచేసి మీ అనుభవ స్థాయిని ఎంచుకోండి",
+    "selectInterest": "దయచేసి మీ ఆసక్తి ఉన్న రంగాన్ని ఎంచుకోండి"
+  },
+  "jobs": {
+    "matchLabel": "మ్యాచ్",
+    "salaryPrefix": "₹"
+  },
+  "language": {
+    "label": "భాష",
+    "selector": "భాషను ఎంచుకోండి"
+  }
+}
